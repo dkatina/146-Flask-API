@@ -31,7 +31,8 @@ def create_app(config_name):
     ma.init_app(app)
     cache.init_app(app)
     # limiter.init_app(app)
-    
+    blueprint_config(app)
+    rate_limit_config()
     
     return app
 
@@ -48,10 +49,6 @@ def rate_limit_config():
 
 if __name__ == '__main__':
     app = create_app('DevelopmentConfig')
-
-    blueprint_config(app)
-
-    rate_limit_config()
 
     with app.app_context():
         #db.drop_all()
