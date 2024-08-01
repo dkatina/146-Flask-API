@@ -123,7 +123,7 @@ Right now, whenever we push to that repo the app will automatically re-deploy, e
 
 To do this we will need the following:
 
-- service-id: This is the id of our web service and can be found in settings by Deploy Hook, or in service url: `srv-oajkndfg98qj35p98efhghnqe`
+- service-id: This is the id of our web service and can be found in settings by Deploy Hook, or in service url ex.: `srv-oajkndfg98qj35p98efhghnqe`
 - While in service settings turn `Auto-Deploy` to no
 
 - API Key: Can Create One in Profile Pic > Account setting > API Keys
@@ -143,3 +143,7 @@ It will be pretty much the same as the `build` job with this additional step
           service-id: ${{ secrets.SERVICE_ID }} 
           api-key: ${{ secrets.RENDER_API_KEY }} 
 ```
+
+
+srv-cqld8bg8fa8c73aoh53g
+rnd_XYsk8e3vxNFxiH7zXhMi9bp7ou02
