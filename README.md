@@ -47,7 +47,7 @@ pip install gunicorn
 ```
 Gunicorn is a python webserver gateway that will be required to build our app on a hosting platform.
 
-With this in place we can remove our `if __name__ == 'main'` app runner as gunnicorn will run our app for us.
+With this in place we can remove our `if __name__ == '__main__'` app runner as gunnicorn will run our app for us.
 
 #### Production Config
 
@@ -76,7 +76,7 @@ pip install python-dotenv
 Because this is a Postgresql DB and not MySQL, we'll need a new adapter as `mysql-connector-python` won't work.
 
 ```
-pip install pyscopg2
+pip install psycopg2
 ```
 on **Mac** it's `psycopg2-binary`, you may need `psychopg2` for deployment, but try without first.
 

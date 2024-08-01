@@ -3,8 +3,9 @@ from secrets import token_bytes
 import jwt
 from flask import jsonify, request #So we can access the request and validate the headers
 from functools import wraps #package that will allow us to create wrappers
+import os
 
-SECRET_KEY = "super_secret_secrets"
+SECRET_KEY = os.environ.get('SECRET_KEY')
 
 def encode_token(user_id, role): #using unique pieces of info to make our tokens user specific
     payload = {
