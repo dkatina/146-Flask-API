@@ -37,8 +37,9 @@ jobs: #The things we want to happen on push
           echo "Contents of site-package: $(ls -l venv/lib/python*/site-packages)"
 
   test:
-    runs-on: ubuntu-latest #Ubuntu is a widely used linux distribution that is heavily support and has alot of prebuilt Github actions
     needs: build
+    runs-on: ubuntu-latest #Ubuntu is a widely used linux distribution that is heavily support and has alot of prebuilt Github actions
+    
     steps:
       - name: Checkout Code
         uses: actions/checkout@v2
@@ -62,8 +63,9 @@ jobs: #The things we want to happen on push
         run: python -m unittest discover -s tests -p 'test_*.py'
           
   deploy:
-    runs-on: ubuntu-latest #Ubuntu is a widely used linux distribution that is heavily support and has alot of prebuilt Github actions
     needs: test
+    runs-on: ubuntu-latest #Ubuntu is a widely used linux distribution that is heavily support and has alot of prebuilt Github actions
+    
     steps:
       - name: Checkout Code
         uses: actions/checkout@v2
