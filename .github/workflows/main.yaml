@@ -38,7 +38,7 @@ jobs: #The things we want to happen on push
 
   test:
     runs-on: ubuntu-latest #Ubuntu is a widely used linux distribution that is heavily support and has alot of prebuilt Github actions
-
+    needs: build
     steps:
       - name: Checkout Code
         uses: actions/checkout@v2
@@ -63,7 +63,7 @@ jobs: #The things we want to happen on push
           
   deploy:
     runs-on: ubuntu-latest #Ubuntu is a widely used linux distribution that is heavily support and has alot of prebuilt Github actions
-
+    needs: test
     steps:
       - name: Checkout Code
         uses: actions/checkout@v2
